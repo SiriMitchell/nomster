@@ -6,11 +6,7 @@ class PlacesController < ApplicationController
   end
 
   def new
-      @place = current_user.places.new(place_params)
-      if @place.valid?
-        redirect_to root_path
-      else
-        render :new
+      @place = Place.new
   end
 
   def create
