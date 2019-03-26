@@ -72,15 +72,6 @@
   </div>
 </div>
 
-<!-- Photo Button Trigger Modal -->
-<button type="button" class="btn btn secondary btn-lg" data-toggle="modal"data-target="#myModal">
-  Add a photo
-</button>
-
-
-
-
-
 <div class="clear"></div>
 
 <div class="row">
@@ -96,3 +87,14 @@
     </div>  
   <% end %>
 </div>
+
+<!-- Photo Button Trigger Modal -->
+<button type="button" class="btn btn secondary btn-lg" data-toggle="modal"data-target="#myModal">
+  Add a photo
+</button>
+
+<div class="clear"></div>
+<%= simple_form_for @photo, url: '#' do |f| %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
