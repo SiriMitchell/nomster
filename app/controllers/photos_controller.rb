@@ -3,10 +3,7 @@ class PhotosController < ApplicationController
 
     def create
       @place = Place.find(params[:place_id])
-      @photo = Photo.new(photo_params)
-      @photo.place_id = @place.id
-      @photo.user_id = current_user.id
-      @photo.save
+      @place.photos.create(photo_params.merge(user: current_user))
       redirect_to place_path(@place)
     end
 

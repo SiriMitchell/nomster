@@ -37,14 +37,17 @@
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
     <% end %>  
-  </div>
+   </div>
+
+  <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+    <%= f. input :picture %>
+    <%= f. input :caption %>
+    <%= f. submit "Add a Photo", class: 'btn btn-primary' %>
+  <% end %>
+
 </div>
 
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-  <%= f. input :picture %>
-  <%= f. input :caption %>
-  <%= f. submit "Add a Photo", class: 'btn btn-primary' %>
-<% end %>
+
 
 
 <br /><br />
