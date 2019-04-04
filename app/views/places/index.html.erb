@@ -1,4 +1,6 @@
-
+<% @places.each do |photo|%>
+<% end %>
+    
 
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
@@ -6,6 +8,7 @@
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
     
+
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
     <% end %>
@@ -23,6 +26,5 @@
     <% end %> 
   </div> 
 <% end %>
-
 
 <%= will_paginate @places %>
