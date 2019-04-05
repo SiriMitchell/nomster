@@ -1,6 +1,8 @@
 
-  <div class="slider" class="booyah-box col-10 offset-1">
-    <%= image_tag(@photo.picture.url) %>
+  <div class="booyah-box col-10 offset-1">
+    <% if @photo.picture_url %>
+      <%= image_tag @photo.picture_url %>
+    <% end %>
   </div>
 
 
