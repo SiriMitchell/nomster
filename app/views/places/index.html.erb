@@ -1,7 +1,5 @@
-<% @places.each do |photo|%>
-<% end %>
-    
 
+  
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
@@ -21,10 +19,14 @@
           <% end %>
           <%= place.comments.last.message %>
           <small><%= place.comments.last.user.email %></small>
-        </blockquote>
       </div>
     <% end %> 
   </div> 
-<% end %>
 
-<%= will_paginate @places %>
+    <% @place.each do |photo| %>
+      <img><%= image_tag photo.picture.url %></img>
+      <%= photo.caption %>
+    <% end %>
+
+    <%= will_paginate @place %>
+<% end %>
