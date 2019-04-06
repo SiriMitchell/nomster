@@ -1,9 +1,9 @@
 
-  <div class="booyah-box col-10 offset-1">
-    <% if @photo.picture_url %>
-      <%= image_tag @photo.picture_url %>
+<div class="photo_slider">
+    <% @photos.picture.each do |photo| %>
+      <%= image_tag photos.picture.url %>
     <% end %>
-  </div>
+</div>
 
 
 <% @places.each do |place| %>
