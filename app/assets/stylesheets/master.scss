@@ -98,3 +98,13 @@ blockquote p {
 .carousel {
   box-shadow: 0px 3px 8px #2a2a2a;
 }
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+.figure {
+  margin-left: 140px
+}

@@ -32,6 +32,11 @@
 
   <br />
 
+
+
+
+  <br />
+
   <div class="float-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -79,12 +84,14 @@
 
 <br /><br /><br />
 
-<div class="field">
+<figure class="figure">
     <% @place.photos.each do |photo| %>
+      <div class="row col-12">
       <%= image_tag photo.picture.url %>
+      <figcaption class"figure-caption">
       <%= photo.caption %>
     <% end %>
-</div>
+</figure>
 
 
 <br /><br />

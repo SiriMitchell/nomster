@@ -67,14 +67,6 @@
     <% end %> 
   </div> 
 
-  <% if place.photos.present? %>
-    <% place.photos.each do |photo| %>
-      <div class="photo_slider">
-        <%= image_tag photo.picture.url %>
-        <%= photo.caption %>
-      </div>
-    <% end %>
-  <% end %>
 <% end %>
 
     <%= will_paginate @place %>
